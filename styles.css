@@ -209,3 +209,15 @@ img {
     height: 65px;
     background-color: #fff;
 }
+
+@font-face {
+    font-family: 'arkhip';
+    src: url('arkhip.woff2') format('woff2');
+}
+
+.arkhip {
+    font-family: 'arkhip';
+    font-size: 54px;
+    color: #000;
+    letter-spacing: 0.1ch;
+}
