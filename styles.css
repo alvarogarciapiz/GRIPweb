@@ -220,6 +220,7 @@ img {
     font-size: 54px;
     color: #000;
     letter-spacing: 0.1ch;
+    font-display: fallback;
 }
 
 .arkhip_sub {
