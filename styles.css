@@ -227,10 +227,12 @@ img {
     font-family: 'arkhip';
     font-size: 30px;
     color: #000;
+    font-display: fallback;
 }
 
 .arkhip_text {
     font-family: 'arkhip';
     font-size: 24px;
     color: #000;
+    font-display: fallback;
 }
