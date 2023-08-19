@@ -195,4 +195,13 @@ img {
 .top-div {
     position: sticky;
     top: 0;
-  }
+}
+
+.navigation-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
