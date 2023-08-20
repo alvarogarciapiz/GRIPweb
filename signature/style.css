@@ -1,0 +1,30 @@
+body {
+  background: #5c6;
+  padding: 1em;
+  box-sizing: border-box;
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+}
+
+figure {
+  margin: 0;
+  border-radius: 0.5em;
+  overflow: hidden;
+  border: solid 2px black;
+  display: inline-block;
+  box-shadow: 0.5em 0.5em 0 #000;
+}
+figure img,
+figure picture {
+  display: block;
+}
+figure figcaption {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1em;
+  background: #eee;
+  font-family: monospace;
+  border-bottom: solid 2px black;
+}
