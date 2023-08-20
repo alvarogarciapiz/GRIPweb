@@ -3,7 +3,7 @@
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 111px;
+    padding-top: 10px;
 }
 
 .big-image {
@@ -35,7 +35,12 @@
     }
     
     .small-images img {
-        width: 100%; /* Ocupar el ancho completo en vista móvil */
-        margin-bottom: 10px; /* Agregar espacio entre las imágenes */
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .big-image img {
+        padding-bottom: 15px;
+        padding-right: -10px;
     }
 }
