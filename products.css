@@ -1,0 +1,41 @@
+.grid-container {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 111px;
+}
+
+.big-image {
+    flex: 1;
+    padding-right: 10px;
+}
+
+.big-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.small-images {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.small-images img {
+    width: calc(50% - 5px);
+    height: auto;
+}
+
+/* Media query para vista móvil */
+@media (max-width: 767px) {
+    .grid-container {
+        flex-direction: column;
+    }
+    
+    .small-images img {
+        width: 100%; /* Ocupar el ancho completo en vista móvil */
+        margin-bottom: 10px; /* Agregar espacio entre las imágenes */
+    }
+}
