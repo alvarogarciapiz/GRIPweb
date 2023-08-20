@@ -14,10 +14,10 @@
 
 ## Características
 
-- Diseños modernos y funcionales.
-- Ropa deportiva de alta calidad.
-- Colecciones exclusivas para diferentes gustos.
-- Accesorios que complementan tu estilo.
+- Diseño responisve
+- CSS con TailWind
+- Alojado en GitHub con su tecnología de GitHub Pages
+- Usa GitHub Actions con un workflow personalizado para publicar la web
 
 ## Instalación
 
@@ -36,7 +36,8 @@ No se requiere instalación para este proyecto web, ya que es una tienda en lín
 
 - HTML
 - CSS (Utilizamos [Tailwind CSS](https://tailwindcss.com/) para el estilo)
-- JavaScript (si es necesario en futuras actualizaciones)
+- GitHub Actions
+- Figma (Para la edición de imágenes)
 
 ## Contacto
 
