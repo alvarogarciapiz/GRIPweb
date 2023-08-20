@@ -5,8 +5,7 @@
 ## Capturas de Pantalla
 
 ![Captura de pantalla 1](https://i.ibb.co/gr48VGQ/Captura-de-pantalla-2023-08-20-a-las-22-15-43.png)
-![Captura de pantalla 2](https://ibb.co/dMMcv0v)
-<!-- Agrega más capturas de pantalla si es necesario -->
+![Captura de pantalla 2](https://i.ibb.co/vqqBWxW/Captura-de-pantalla-2023-08-20-a-las-22-16-14.png)
 
 ## Enlaces Importantes
 
