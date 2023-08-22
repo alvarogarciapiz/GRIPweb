@@ -4,7 +4,7 @@
         hour = minute * 60,
         day = hour * 24;
 
-  release_date = "8/24/2023";
+  release_date = "8/25/2023";
   
   const countDown = new Date(release_date).getTime(),
       x = setInterval(function() {    
