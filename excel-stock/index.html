@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Read Public Excel from Google Drive</title>
+    <!-- Include the Google API Client Library -->
+    <script src="https://apis.google.com/js/api.js"></script>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        // Your API Key
+        const API_KEY = 'AIzaSyCR_ta2hP-uUejN29QT3EgJ9yhDdrC19_s';
+
+        // Your Google Drive File ID
+        const FILE_ID = '1r8KnwTRDr5DlocXelGBzHcGcu_76dICN';
+
+        // Load the Google API Client Library
+        gapi.load('client', start);
+
+        function start() {
+            // Initialize the client with your API key
+            gapi.client.init({
+                'apiKey': API_KEY,
+            }).then(function () {
+                // Make an API request to get the file
+                return gapi.client.drive.files.get({
+                    'fileId': FILE_ID,
+                    'alt': 'media', // This is to get the file content
+                });
+            }).then(function (response) {
+                // Handle the Excel file content here
+                const fileContent = response.body;
+
+                // Display the content in the 'output' div
+                const outputDiv = document.getElementById('output');
+                outputDiv.innerText = fileContent;
+
+                // Now you can parse the Excel content using a library like xlsx.js
+            }).catch(function (error) {
+                console.error('Error:', error.result.error.message);
+            });
+        }
+    </script>
+</body>
+</html>
