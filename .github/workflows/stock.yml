@@ -15,7 +15,6 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install pandas
-          pip install json
           python stock.py
         
       - name: Push al repo
