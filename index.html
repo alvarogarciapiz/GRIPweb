@@ -47,7 +47,7 @@ fetch('data.json')
     if (prenda) {
       const cantidad = prenda.Q;
       // Actualizar el contenido del elemento con id "resultado"
-      document.getElementById('resultado').textContent = `La cantidad de UNUMCAMBLANCA es: ${cantidad}`;
+      document.getElementById('resultado').textContent = `${cantidad}`;
     } else {
       // Si la prenda no se encuentra, mostrar un mensaje de error
       document.getElementById('resultado').textContent = 'Prenda no encontrada';
