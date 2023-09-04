@@ -1,0 +1,22 @@
+name: Actualiza Stock
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+
+jobs:
+  actualiza-stock:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v3
+
+      - name: Run Python Stock Updates
+        run: python stock.py
+        
+      - name: Push al repo
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add data.json
+          git commit -m "Modificación automática del fichero de stock"
+          git push
