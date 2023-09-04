@@ -28,6 +28,28 @@
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <script>
+        fetch('../data.json')
+            .then(response => response.json())
+            .then(data => {
+                // Buscar la prenda "UNUMCAMBLANCA" en el arreglo
+                const prenda = data.find(item => item.Prenda === 'TRESCAMSIGNATURE');
+
+                if (prenda) {
+                    const cantidad = prenda.Q;
+                    // Actualizar el contenido del elemento con id "resultado"
+                    document.getElementById('resultado').textContent = `Sólo ${cantidad} en stock`;
+                } else {
+                    // Si la prenda no se encuentra, mostrar un mensaje de error
+                    document.getElementById('resultado').textContent = 'Sólo 2 en stock';
+                }
+            })
+            .catch(error => {
+                console.error('Error al cargar el archivo JSON:', error);
+            });
+
+    </script>
 </head>
 
 <body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
@@ -77,7 +99,7 @@
     
         <div class="contenedor">
         <div class="izquierda">
-            <p class="mt-2 mb-2">Camiseta - TRES</p>
+            <p class="mt-2 mb-2" id="resultado" style="color:red">Camiseta - TRES</p>
             <p class="mt-2 mb-2 font-bold text-gray-800">17.99€</p>
         </div>
         <div class="derecha">
