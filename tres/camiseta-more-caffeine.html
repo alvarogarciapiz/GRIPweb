@@ -42,7 +42,7 @@
                     document.getElementById('resultado').textContent = `Sólo ${cantidad} en stock`;
                 } else {
                     // Si la prenda no se encuentra, mostrar un mensaje de error
-                    document.getElementById('resultado').textContent = 'Prenda no encontrada';
+                    document.getElementById('resultado').textContent = 'Sólo 2 en stock';
                 }
             })
             .catch(error => {
@@ -99,8 +99,7 @@
     
         <div class="contenedor">
         <div class="izquierda">
-            <p class="mt-2 mb-2">Camiseta - TRES</p>
-            <div id="resultado"></div>
+            <div id="resultado" style="color:red"></div>
             <p class="mt-2 mb-2 font-bold text-gray-800">19.99€</p>
         </div>
         <div class="derecha">
