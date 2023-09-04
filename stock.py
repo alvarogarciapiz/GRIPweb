@@ -1,6 +1,5 @@
 import pandas as pd
 import json
-import time
 
 SHEET_ID = '1r8KnwTRDr5DlocXelGBzHcGcu_76dICN'
 SHEET_NAME = 'STOCKWEB'
