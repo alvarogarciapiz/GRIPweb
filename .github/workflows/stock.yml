@@ -26,8 +26,10 @@ jobs:
         run: |
           if diff "data.json" "olddata.json" >/dev/null; then
             echo "files_changed=false" >> $GITHUB_OUTPUT
+            echo "El stock permanece igual"
           else
             echo "files_changed=true" >> $GITHUB_OUTPUT
+            echo "El stock ha cambiado"
           fi
 
       - name: Push al repo
