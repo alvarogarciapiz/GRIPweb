@@ -40,9 +40,10 @@
                 const prenda = data.find(item => item.Prenda === 'UNUMCAMBLANCA');
 
                 if (prenda) {
+                    var code = "<i class="fa-solid fa-boxes-stacked" style="color: #b51a00;"></i>";
                     const cantidad = prenda.Q;
                     // Actualizar el contenido del elemento con id "resultado"
-                    document.getElementById('resultado').textContent = ` Sólo ${cantidad} en stock`;
+                    document.getElementById('resultado').textContent = `${code} Sólo ${cantidad} en stock`;
                 } else {
                     // Si la prenda no se encuentra, mostrar un mensaje de error
                     document.getElementById('resultado').textContent = 'Sólo 2 en stock';
