@@ -33,7 +33,7 @@ jobs:
           fi
 
       - name: Push al repo
-        if: env.files_changed == 'true'
+        if: ${{ steps.check-data.outputs.files_changed }} == 'true'
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
