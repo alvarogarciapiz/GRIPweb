@@ -29,9 +29,6 @@
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-    <!-- Fa Fa Icons -->
-    <script src="https://kit.fontawesome.com/a9264a0942.js" crossorigin="anonymous"></script>
-
     <script>
         fetch('../data.json')
             .then(response => response.json())
@@ -40,10 +37,9 @@
                 const prenda = data.find(item => item.Prenda === 'UNUMCAMBLANCA');
 
                 if (prenda) {
-                    var code = "<i class="fa-solid fa-boxes-stacked" style="color: #b51a00;"></i>";
                     const cantidad = prenda.Q;
                     // Actualizar el contenido del elemento con id "resultado"
-                    document.getElementById('resultado').textContent = `${code} Sólo ${cantidad} en stock`;
+                    document.getElementById('resultado').textContent = `Sólo ${cantidad} en stock`;
                 } else {
                     // Si la prenda no se encuentra, mostrar un mensaje de error
                     document.getElementById('resultado').textContent = 'Sólo 2 en stock';
@@ -103,7 +99,7 @@
     
         <div class="contenedor">
         <div class="izquierda">
-            <i class="fa-solid fa-boxes-stacked" style="color: #b51a00;"></i><p class="mt-2 mb-2" id="resultado" style="color: #b51a00">Camiseta - UNUM</p>
+            <p class="mt-2 mb-2" id="resultado" style="color:red">Camiseta - UNUM</p>
             <p class="mt-2 mb-2 font-bold text-gray-800">14.99€</p>
         </div>
         <div class="derecha">
