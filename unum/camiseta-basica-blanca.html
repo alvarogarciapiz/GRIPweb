@@ -29,6 +29,9 @@
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
+    <!-- Fa Fa Icons -->
+    <script src="https://kit.fontawesome.com/a9264a0942.js" crossorigin="anonymous"></script>
+
     <script>
         fetch('../data.json')
             .then(response => response.json())
@@ -39,7 +42,7 @@
                 if (prenda) {
                     const cantidad = prenda.Q;
                     // Actualizar el contenido del elemento con id "resultado"
-                    document.getElementById('resultado').textContent = `Sólo ${cantidad} en stock`;
+                    document.getElementById('resultado').textContent = `<i class="fa-solid fa-boxes-stacked" style="color: #b51a00;"></i> Sólo ${cantidad} en stock`;
                 } else {
                     // Si la prenda no se encuentra, mostrar un mensaje de error
                     document.getElementById('resultado').textContent = 'Sólo 2 en stock';
