@@ -1,4 +1,4 @@
-name: Actualiza Stock en la web
+name: Actualiza Stock
 on:
   workflow_dispatch:
   schedule:
@@ -16,10 +16,19 @@ concurrency:
 jobs:
   actualiza-stock:
     runs-on: ubuntu-latest
-    name: Lee nuevo stock y comprueba cambios
+    name: Check Stock Changes
     steps:
       - name: Checkout del código
         uses: alvarogarciapiz/actions/GRIP/actualiza-stock@main
+
+  stock-change:
+    runs-on: ubuntu-latest
+    name: Check func
+    needs: actualiza-stock
+    steps:
+      - name: Checkout del código
+        shell: bash
+        run: echo ${{ needs.actualiza-stock.outputs.files_changed }}
 
   push-repo:
     if: needs.actualiza-stock.outputs.files_changed == 'true'
