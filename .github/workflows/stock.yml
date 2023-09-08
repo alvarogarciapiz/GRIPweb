@@ -31,7 +31,6 @@ jobs:
             echo "files_changed=true" >> $GITHUB_OUTPUT
             echo "El stock ha cambiado"
           fi
-          echo "${{ files_changed }}"
 
   push-repo:
     if: ${{ needs.actualiza-stock.outputs.files_changed }} == 'true'
