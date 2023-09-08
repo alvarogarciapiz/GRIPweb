@@ -17,6 +17,8 @@ jobs:
   actualiza-stock:
     runs-on: ubuntu-latest
     name: Check Stock Changes
+    outputs:
+      files_changed: ${{ steps.check.outputs.files_changed }}
     steps:
       - name: Checkout del código
         id: check
