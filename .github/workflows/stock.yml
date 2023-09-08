@@ -35,7 +35,7 @@ jobs:
           fi
 
   push-repo:
-    if: ${{ needs.actualiza-stock.outputs.files_changed }} == 'true'
+    if: needs.actualiza-stock.outputs.files_changed == 'true'
     runs-on: ubuntu-latest
     needs: actualiza-stock
     steps:
