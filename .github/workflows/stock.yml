@@ -17,21 +17,10 @@ jobs:
   actualiza-stock:
     runs-on: ubuntu-latest
     name: Check Stock Changes
-    outputs:
-      files_changed: ${{ steps.check.outputs.files_changed }}
     steps:
       - name: Checkout del código
         id: check
         uses: alvarogarciapiz/actions/GRIP/actualiza-stock@main
-
-  stock-change:
-    runs-on: ubuntu-latest
-    name: Check func
-    needs: actualiza-stock
-    steps:
-      - name: Checkout del código
-        shell: bash
-        run: echo ${{ needs.actualiza-stock.outputs.files_changed }}
 
   push-repo:
     if: needs.actualiza-stock.outputs.files_changed == 'true'
