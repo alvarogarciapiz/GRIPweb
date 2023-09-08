@@ -34,7 +34,7 @@ jobs:
           echo "${{ files_changed }}"
 
   push-repo:
-    if: ${{ needs.actualiza-stock-outputs.files_changed }} == 'true'
+    if: ${{ needs.actualiza-stock.outputs.files_changed }} == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Push al repo
