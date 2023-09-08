@@ -25,6 +25,7 @@ jobs:
         uses: alvarogarciapiz/actions/GRIP/actualiza-stock@main
 
   push-repo:
+    name: Update Stock (push-repo)
     if: needs.actualiza-stock.outputs.files_changed == 'true'
     runs-on: ubuntu-latest
     needs: actualiza-stock
@@ -33,6 +34,7 @@ jobs:
         uses: alvarogarciapiz/actions/GRIP/push-repo@main
 
   deploy:
+    name: Deploy
     if: needs.actualiza-stock.outputs.files_changed == 'true'
     needs: [actualiza-stock, push-repo]
     environment:
