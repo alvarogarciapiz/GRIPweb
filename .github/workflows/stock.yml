@@ -33,8 +33,11 @@ jobs:
           fi
           echo "${{ files_changed }}"
 
+  push-repo:
+    if: ${{ needs.actualiza-stock-outputs.files_changed }} == 'true'
+    runs-on: ubuntu-latest
+    steps:
       - name: Push al repo
-        if: ${{ steps.check-data.outputs.files_changed }} == 'true'
         run: |
           echo "${{ steps.check-data.outputs.files_changed }}"
           git config user.name "GitHub Actions"
