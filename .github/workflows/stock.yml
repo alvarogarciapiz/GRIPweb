@@ -51,7 +51,7 @@ jobs:
           pip install --upgrade pip
           pip install pandas
           python stock.py
-          
+
       - name: Push al repo
         run: |
           git config user.name "GitHub Actions"
@@ -59,3 +59,22 @@ jobs:
           git add data.json
           git commit -m "Modificación automática del fichero de stock"
           git push
+  deploy:
+    if: needs.actualiza-stock.outputs.files_changed == 'true'
+    needs: [actualiza-stock, push-repo]
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
