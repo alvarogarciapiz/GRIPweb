@@ -14,17 +14,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  saluda:
-    runs-on: ubuntu-latest
-    name: A job to say hello
-    steps:
-      - id: foo
-        uses: alvarogarciapiz/actions/GRIP/example@main
-        with:
-          who-to-greet: 'Mona the Octocat'
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
-        shell: bash
-
   actualiza-stock:
     runs-on: ubuntu-latest
     name: Lee nuevo stock y comprueba cambios
@@ -48,14 +37,5 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+      - name: Deploy
+        uses: alvarogarciapiz/actions/GRIP/deploy@main
