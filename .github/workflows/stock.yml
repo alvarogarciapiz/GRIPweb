@@ -27,36 +27,10 @@ jobs:
 
   actualiza-stock:
     runs-on: ubuntu-latest
-    outputs:
-      files_changed: ${{ steps.check-data.outputs.files_changed }}
+    name: Lee nuevo stock y comprueba cambios
     steps:
       - name: Checkout del código
-        uses: actions/checkout@v3
-
-      - name: Copiar fichero data.json
-        run: |
-          cp data.json olddata.json
-
-      - name: Run Python Stock Updates
-        run: |
-          pip install --upgrade pip
-          pip install pandas
-          python stock.py
-
-      - name: Comprobar data
-        id: check-data
-        run: |
-          if diff "data.json" "olddata.json" >/dev/null; then
-            echo "files_changed=false" >> $GITHUB_OUTPUT
-            echo "El stock permanece igual"
-          else
-            echo "files_changed=true" >> $GITHUB_OUTPUT
-            echo "El stock ha cambiado"
-          fi
-
-      - name: Eliminar olddata
-        run: |
-          rm olddata.json
+        uses: alvarogarciapiz/actions/GRIP/actualiza-stock@main
 
   push-repo:
     if: needs.actualiza-stock.outputs.files_changed == 'true'
