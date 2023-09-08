@@ -4,6 +4,15 @@ on:
   schedule:
     - cron: '*/10 * * * *'
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+  
 jobs:
   actualiza-stock:
     runs-on: ubuntu-latest
