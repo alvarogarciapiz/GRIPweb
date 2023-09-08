@@ -38,7 +38,7 @@ jobs:
     steps:
       - name: Push al repo
         run: |
-          echo "${{ steps.check-data.outputs.files_changed }}"
+          echo "${{ needs.actualiza-stock.outputs.files_changed }}"
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add *
