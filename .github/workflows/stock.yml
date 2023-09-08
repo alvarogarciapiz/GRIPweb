@@ -37,22 +37,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: actualiza-stock
     steps:
-      - name: Checkout del código
-        uses: actions/checkout@v3
+      - name: Push al repo para actualizar fichero de stock
+        uses: alvarogarciapiz/actions/GRIP/push-repo@main
 
-      - name: Run Python Stock Updates
-        run: |
-          pip install --upgrade pip
-          pip install pandas
-          python stock.py
-
-      - name: Push al repo
-        run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git add data.json
-          git commit -m "Modificación automática del fichero de stock"
-          git push
   deploy:
     if: needs.actualiza-stock.outputs.files_changed == 'true'
     needs: [actualiza-stock, push-repo]
