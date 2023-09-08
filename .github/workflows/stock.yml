@@ -5,14 +5,14 @@ on:
     - cron: '*/10 * * * *'
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
 concurrency:
   group: "pages"
   cancel-in-progress: false
-  
+
 jobs:
   actualiza-stock:
     runs-on: ubuntu-latest
