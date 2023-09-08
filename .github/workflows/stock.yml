@@ -34,6 +34,10 @@ jobs:
             echo "El stock ha cambiado"
           fi
 
+      - name: Eliminar olddata
+        run: |
+          rm olddata.json
+
   push-repo:
     if: needs.actualiza-stock.outputs.files_changed == 'true'
     runs-on: ubuntu-latest
