@@ -9,6 +9,9 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+
 concurrency:
   group: "pages"
   cancel-in-progress: false
